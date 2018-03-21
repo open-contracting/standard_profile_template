@@ -1,0 +1,25 @@
+sudo: false
+language: python
+cache: pip
+python:
+  - "3.6"
+addons:
+  apt:
+    packages:
+    - lftp
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: curl https://raw.githubusercontent.com/OpenDataServices/opendataservices-deploy/master/open-contracting-profile-deploy.sh | bash -
+  on:
+    all_branches: true
+script:
+  - flake8
+  - |
+    mkdir build
+    cd docs
+    for lang in en es; do
+        make -e SPHINXOPTS="-D language='$lang'" dirhtml
+        mv _build/dirhtml ../build/$lang
+    done
+    cd ..
