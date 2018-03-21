@@ -3,6 +3,10 @@ language: python
 cache: pip
 python:
   - "3.6"
+env:
+  - BASEDIR="https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master"
+install:
+  - curl -s -S --retry 3 $BASEDIR/tests/install.sh | bash -
 addons:
   apt:
     packages:
@@ -14,7 +18,7 @@ deploy:
   on:
     all_branches: true
 script:
-  - flake8
+  - curl -s -S --retry 3 $BASEDIR/tests/script.sh | bash -
   - |
     mkdir build
     cd docs
