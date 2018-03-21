@@ -7,8 +7,7 @@ Visit the [OCDS Development Handbook](http://ocds-standard-development-handbook.
 ## Using this template
 
 * [Download ZIP](https://github.com/open-contracting/profile_template/archive/master.zip)
-* Set the `name` in `setup.py`
-* Replace all `TODO` in `extension.json`, `conf.py`, `index.md`, `layout.html` and this file
+* Replace `TODO` in `extension.json`, `docs/conf.py`, `docs/index.md`, `docs/_templates/layout.html` and this file
 * Remove this section of this file
 * Remove `.keep` files once new files are added to the directories:
 
