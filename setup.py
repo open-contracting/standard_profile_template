@@ -50,9 +50,9 @@ jsonschema_text = ocds_sphinx_directives:jsonschema_extract
     ],
     dependency_links=[
       'git+https://github.com/open-contracting/standard_theme.git@open_contracting#egg=standard_theme-0.0.0',
-      'git+https://github.com/open-contracting/ocds_sphinx_directives.git@91b4de9d3e354db461ae93e65035b45738f56e15#egg=ocds_sphinx_directives-0.0.0',
-      'git+https://github.com/jpmckinney/sphinxcontrib-jsonschema.git@f6614d5c1fd39cf7e7e908fd42b6b0f870f6d8cb#egg=sphinxcontrib-jsonschema-0.9.4',
-      'git+https://github.com/OpenDataServices/sphinxcontrib-opendataservices.git@fab0ff0167d32ec243d42f272e0e50766299c078#egg=sphinxcontrib-opendataservices-0.0.0',
+      'git+https://github.com/open-contracting/ocds_sphinx_directives.git@91b4de9d3e354db461ae93e65035b45738f56e15#egg=ocds_sphinx_directives-0.0.0',  # noqa: E501
+      'git+https://github.com/jpmckinney/sphinxcontrib-jsonschema.git@f6614d5c1fd39cf7e7e908fd42b6b0f870f6d8cb#egg=sphinxcontrib-jsonschema-0.9.4',  # noqa: E501
+      'git+https://github.com/OpenDataServices/sphinxcontrib-opendataservices.git@fab0ff0167d32ec243d42f272e0e50766299c078#egg=sphinxcontrib-opendataservices-0.0.0',  # noqa: E501
       'git+https://github.com/rtfd/recommonmark.git@81d7c6f7b37981ac22571dd91a7cc9d24c3e66a1#egg=recommonmark-0.4.0',
     ]
 )
