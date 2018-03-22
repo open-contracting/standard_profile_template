@@ -24,7 +24,7 @@ import os
 import subprocess
 
 import standard_theme
-from ocds_sphinx_directives import translate_codelists, translate_schema
+from ocds_documentation_support import translate_codelists, translate_schema
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 from sphinxcontrib.opendataservices import AutoStructifyLowPriority
@@ -119,16 +119,6 @@ gettext_compact = False
 
 extension_registry_git_ref = 'master'
 
-basedir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
-localedir = os.path.join(basedir, 'locale')
-
-# Compile catalogs 'codelists.po' to 'codelists.mo' and 'schema.po' to 'schema.mo', so that translate_codelists and
-# translate_schema can succeed for translations.
-for domain in ('codelists', 'schema'):
-    if os.path.isfile(os.path.join(basedir, 'locale', '{}.po'.format(domain))):
-        subprocess.run(['pybabel', 'compile', '--use-fuzzy', '-d', localedir, '-D', domain])
-
-
 def setup(app):
     app.add_config_value('recommonmark_config', {
         'enable_eval_rst': True
@@ -136,6 +126,15 @@ def setup(app):
 
     app.add_transform(AutoStructify)
     app.add_transform(AutoStructifyLowPriority)
+
+    basedir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+    localedir = os.path.join(basedir, 'locale')
+
+    # Compile catalogs 'codelists.po' to 'codelists.mo' and 'schema.po' to 'schema.mo', so that translate_codelists and
+    # translate_schema can succeed for translations.
+    for domain in ('codelists', 'schema'):
+        if os.path.isfile(os.path.join(basedir, 'locale', '{}.po'.format(domain))):
+            subprocess.run(['pybabel', 'compile', '--use-fuzzy', '-d', localedir, '-D', domain])
 
     filenames = [
         'release-schema.json',
