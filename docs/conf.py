@@ -24,9 +24,10 @@ import os
 import subprocess
 
 import standard_theme
+from ocds_documentation_support import translate_codelists, translate_schema
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
-from sphinxcontrib.opendataservices import AutoStructifyLowPriority, translate_codelists, translate_schema
+from sphinxcontrib.opendataservices import AutoStructifyLowPriority
 
 # -- General configuration ------------------------------------------------
 
@@ -37,7 +38,11 @@ from sphinxcontrib.opendataservices import AutoStructifyLowPriority, translate_c
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinxcontrib.jsonschema', 'ocds_sphinx_directives', 'sphinxcontrib.opendataservices']
+extensions = [
+    'sphinxcontrib.jsonschema',
+    'sphinxcontrib.opencontracting',
+    'sphinxcontrib.opendataservices',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -114,23 +119,29 @@ gettext_compact = False
 
 extension_registry_git_ref = 'master'
 
-# Compile catalogs 'codelists.po' to 'codelists.mo' and 'schema.po' to 'schema.mo', so that translate_codelists and
-# translate_schema can succeed for translations.
-subprocess.run(['pybabel', 'compile', '--use-fuzzy', '-d', '../locale', '-D', 'codelists'])
-subprocess.run(['pybabel', 'compile', '--use-fuzzy', '-d', '../locale', '-D', 'schema'])
-
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
         'enable_eval_rst': True
     }, True)
+
     app.add_transform(AutoStructify)
     app.add_transform(AutoStructifyLowPriority)
 
-    basedir = os.path.join(os.path.dirname((os.path.realpath(__file__))), '..')
+    basedir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
     localedir = os.path.join(basedir, 'locale')
 
+    # Compile catalogs 'codelists.po' to 'codelists.mo' and 'schema.po' to 'schema.mo', so that translate_codelists and
+    # translate_schema can succeed for translations.
+    for domain in ('codelists', 'schema'):
+        if os.path.isfile(os.path.join(basedir, 'locale', '{}.po'.format(domain))):
+            subprocess.run(['pybabel', 'compile', '--use-fuzzy', '-d', localedir, '-D', domain])
+
+    filenames = [
+        'release-schema.json',
+    ]
+
     language = app.config.overrides.get('language', 'en')
-    translate_schema('schema', ['release-schema.json'], os.path.join(basedir, 'schema'), os.path.join(basedir, 'docs', '_static'), localedir, language)  # noqa
+    translate_schema('schema', filenames, os.path.join(basedir, 'schema'), os.path.join(basedir, 'docs', '_static'), localedir, language)  # noqa
     for sourcedir in ('schema', 'docs/extensions'):
-        translate_codelists('codelists', os.path.join(basedir, sourcedir, 'codelists'), os.path.join(basedir, sourcedir, 'codelists_translated', language), localedir, language)  # noqa
+        translate_codelists('codelists', os.path.join(basedir, sourcedir, 'codelists'), os.path.join(basedir, 'docs', '_static', 'codelists'), localedir, language)  # noqa
