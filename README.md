@@ -2,7 +2,7 @@
 
 Visit <http://standard.open-contracting.org/profiles/TODO/latest/en/> to read the profile's documentation.
 
-Visit the [OCDS Development Handbook](http://ocds-standard-development-handbook.readthedocs.io/en/latest/standard/) for developer documentation about the profile.
+Visit the [OCDS Development Handbook](http://ocds-standard-development-handbook.readthedocs.io/en/latest/profiles/) for developer documentation about the profile.
 
 ## Using this template
 
