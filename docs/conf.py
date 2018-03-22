@@ -119,6 +119,7 @@ gettext_compact = False
 
 extension_registry_git_ref = 'master'
 
+
 def setup(app):
     app.add_config_value('recommonmark_config', {
         'enable_eval_rst': True
