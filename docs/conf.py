@@ -39,8 +39,8 @@ from sphinxcontrib.opendataservices import AutoStructifyLowPriority
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'ocds_sphinx_directives',
     'sphinxcontrib.jsonschema',
+    'sphinxcontrib.opencontracting',
     'sphinxcontrib.opendataservices',
 ]
 
