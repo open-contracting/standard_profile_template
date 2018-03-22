@@ -7,6 +7,7 @@ env:
   - BASEDIR="https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master"
 install:
   - curl -s -S --retry 3 $BASEDIR/tests/install.sh | bash -
+  - pip install -r requirements.txt
 addons:
   apt:
     packages:
