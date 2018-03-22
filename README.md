@@ -4,12 +4,19 @@ Visit <http://standard.open-contracting.org/profiles/TODO/latest/en/> to read th
 
 Visit the [OCDS Development Handbook](http://ocds-standard-development-handbook.readthedocs.io/en/latest/profiles/) for developer documentation about the profile.
 
-## Using this template
+## Getting started
 
-* [Download ZIP](https://github.com/open-contracting/standard_profile_template/archive/master.zip)
-* Replace `TODO` in `extension.json`, `docs/conf.py`, `docs/index.md`, `docs/_templates/layout.html` and this file
-* Remove this section of this file
-* Remove `.keep` files once new files are added to the directories:
+A profile is also an extension. See the [standard_extension_template](https://github.com/open-contracting/standard_extension_template) for how to use this template as an extension. As a profile:
+
+1. [Download a ZIP file version of the template](https://github.com/open-contracting/standard_profile_template/archive/master.zip)
+1. Extract it, and initialise it as a git repository (`git init`)
+1. Replace `TODO` in `extension.json`, `docs/conf.py`, `docs/index.md`, `docs/_templates/layout.html` and this file
+1. Remove this section of this file
+1. Update and prepare any other files
+1. Commit the files you have added or changed
+1. Delete `.keep` files once new files are added to those directories (see below)
+1. Delete any root `*-schema.json` or `codelists/*.csv` files you have not changed
+1. Push to a new public Git repository
 
 ```shell
 git rm assets/.keep docs/_static/.keep docs/extensions/codelists/.keep locale/.keep schema/codelists/.keep
