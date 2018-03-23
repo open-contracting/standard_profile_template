@@ -26,7 +26,7 @@ ASSETS_DIR=
 # Compile PO files for codelists and schema to MO files, so that translate_codelists and translate_schema succeed.
 .PHONY: compile
 compile:
-	pybabel compile --use-fuzzy -d $(CATALOGS_DIR) -D schema
-	pybabel compile --use-fuzzy -d $(CATALOGS_DIR) -D codelists
+	# pybabel compile --use-fuzzy -d $(CATALOGS_DIR) -D schema
+	# pybabel compile --use-fuzzy -d $(CATALOGS_DIR) -D codelists
 
 # Put local targets below.
