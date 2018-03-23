@@ -56,7 +56,7 @@ extract: extract_codelists extract_schema extract_markdown clean_current_lang
 
 .PHONY: update_txconfig
 update_txconfig:
-  sphinx-intl update-txconfig-resources --transifex-project-name $(TRANSIFEX_PROJECT) --pot-dir $(POT_DIR) --locale-dir $(LOCALE_DIR)
+	sphinx-intl update-txconfig-resources --transifex-project-name $(TRANSIFEX_PROJECT) --pot-dir $(POT_DIR) --locale-dir $(LOCALE_DIR)
 
 # Builds and pushes the .pot files (`source_file` in .tx/config) to Transifex.
 .PHONY: push
