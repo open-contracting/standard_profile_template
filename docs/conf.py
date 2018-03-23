@@ -21,7 +21,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import os
-import subprocess
 
 import standard_theme
 from ocds_documentation_support import translate_codelists, translate_schema
@@ -131,14 +130,7 @@ def setup(app):
     basedir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
     localedir = os.path.join(basedir, 'locale')
 
-    # Compile catalogs 'codelists.po' to 'codelists.mo' and 'schema.po' to 'schema.mo', so that translate_codelists and
-    # translate_schema can succeed for translations.
-    for domain in ('codelists', 'schema'):
-        if os.path.isfile(os.path.join(basedir, 'locale', '{}.po'.format(domain))):
-            subprocess.run(['pybabel', 'compile', '--use-fuzzy', '-d', localedir, '-D', domain])
-
     filenames = [
-        'release-schema.json',
     ]
 
     language = app.config.overrides.get('language', 'en')
