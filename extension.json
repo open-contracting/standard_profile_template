@@ -8,6 +8,9 @@
   "documentationUrl": {
     "en": "http://httpbin.org/anything/path/to/documentation/in/specified/language"
   },
+  "codelists": [
+    "emptyCodelist.csv"
+  ],
   "compatibility": [
     "1.0",
     "1.1"
