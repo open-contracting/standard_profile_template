@@ -6,7 +6,7 @@
     "en": "This profile collects extensions and guidance for implementing OCDS for TODO"
   },
   "documentationUrl": {
-    "en": "http://standard.open-contracting.org/profiles/TODO/latest/en/"
+    "en": "http://httpbin.org/anything/path/to/documentation/in/specified/language"
   },
   "compatibility": [
     "1.0",
