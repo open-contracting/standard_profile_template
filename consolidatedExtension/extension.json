@@ -1,0 +1,16 @@
+{
+  "name": {
+    "en": "OCDS for TODO Consolidated Extension"
+  },
+  "description": {
+    "en": "Collects together all the extensions which make up the OCDS for TODO profile into a single extension"
+  },
+  "documentationUrl": {
+    "en": "http://standard.open-contracting.org/profiles/TODO/latest/en/"
+  },
+  "codelists": [],
+  "compatibility": [
+    "1.0",
+    "1.1"
+  ]
+}
