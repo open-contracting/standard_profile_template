@@ -115,9 +115,14 @@ html_static_path = ['../schema', '_static']
 
 locale_dirs = ['../locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
 gettext_compact = False
+profile_identifier = 'TODO'
+extension_versions = {
+    # 'extension_id_in_registry': 'version',
+}
 
 
 def setup(app):
+    app.add_config_value('extension_versions', extension_versions)
     app.add_config_value('recommonmark_config', {
         'auto_toc_tree_section': 'Contents',
         'enable_eval_rst': True
