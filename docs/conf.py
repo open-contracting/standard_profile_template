@@ -21,6 +21,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import os
+from collections import OrderedDict
 
 import standard_theme
 from ocds_documentation_support import translate_codelists, translate_schema
