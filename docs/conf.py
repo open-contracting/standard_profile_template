@@ -116,9 +116,9 @@ html_static_path = ['../schema', '_static']
 locale_dirs = ['../locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
 gettext_compact = False
 profile_identifier = 'TODO'
-extension_versions = {
-    # 'extension_id_in_registry': 'version',
-}
+extension_versions = OrderedDict([
+    # ('extension_id_in_registry', 'version'),
+])
 
 
 def setup(app):
