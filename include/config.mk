@@ -30,7 +30,7 @@ TRANSIFEX_PROJECT=
 # Compile PO files for codelists and schema to MO files, so that translate_codelists and translate_schema succeed.
 .PHONY: compile
 compile:
-	pybabel compile --use-fuzzy -d $(LOCALE_DIR) -D $(DOMAIN_PREFIX)schema
-	pybabel compile --use-fuzzy -d $(LOCALE_DIR) -D $(DOMAIN_PREFIX)codelists
+	# pybabel compile --use-fuzzy -d $(LOCALE_DIR) -D $(DOMAIN_PREFIX)schema
+	# pybabel compile --use-fuzzy -d $(LOCALE_DIR) -D $(DOMAIN_PREFIX)codelists
 
 # Put local targets below.
