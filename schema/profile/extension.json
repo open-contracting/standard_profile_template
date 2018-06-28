@@ -1,18 +1,14 @@
 {
   "name": {
-    "en": "OCDS for TODO"
+    "en": "OCDS for TODO Consolidated Extension"
   },
   "description": {
-    "en": "This profile collects extensions and guidance for implementing OCDS for TODO"
+    "en": "Collects, into a single extension, the extensions that compose the OCDS for TODO profile"
   },
   "documentationUrl": {
     "en": "http://httpbin.org/anything/path/to/documentation/in/specified/language"
   },
-  "codelists": [
-    "emptyCodelist.csv"
-  ],
   "compatibility": [
-    "1.0",
     "1.1"
   ]
 }
