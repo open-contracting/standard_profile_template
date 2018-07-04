@@ -20,4 +20,5 @@ install:
 script:
   - curl -s -S --retry 3 $BASEDIR/tests/script.sh | bash -
   - python schema/build-profile.py
+  - make extract
   - make
