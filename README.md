@@ -4,7 +4,7 @@
 
 1. [Download a ZIP file version of the template](https://github.com/open-contracting/standard_profile_template/archive/master.zip)
 1. Extract it, and initialise it as a git repository (`git init`)
-1. Replace `TODO` in `docs/conf.py`, `docs/index.md`, `docs/_templates/layout.html`, `schema/profile/extension.json` and this file
+1. Replace `TODO` in `docs/conf.py`, `docs/index.md`, `schema/profile/extension.json` and this file
 1. Update and prepare any files
 1. Commit the files you added or changed
 1. Delete `.keep` files once new files are added to those directories (see below)
