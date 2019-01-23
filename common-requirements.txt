@@ -15,4 +15,4 @@ sphinx-intl<1
 transifex-client
 
 # Profile
-ocdsextensionregistry>=0.0.8
+ocdsextensionregistry>=0.0.9
