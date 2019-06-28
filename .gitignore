@@ -1,6 +1,7 @@
 *.mo
+*.swp
+.ve
 
 /build
 /cache.sqlite
 /docs/_static/patched
-/docs/extensions/codelists_translated
