@@ -1,5 +1,5 @@
 # Update this file from a profile with:
-# curl -O https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/common-requirements.txt
+# curl -O https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/.travis.yml
 sudo: false
 language: python
 cache: pip
