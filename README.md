@@ -24,8 +24,14 @@ curl -O https://raw.githubusercontent.com/open-contracting/standard_profile_temp
 curl -O https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/Makefile
 curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/include/common.mk -o include/common.mk
 curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/include/prologue.mk -o include/prologue.mk
+
+# For a profile:
 curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/tests/conftest.py -o tests/conftest.py
 curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/tests/test_common.py -o tests/test_common.py
+
+# For the standard:
+curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/tests/conftest.py -o standard/tests/conftest.py
+curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/tests/test_common.py -o standard/tests/test_common.py
 ```
 
 Periodically update the following files across profiles:
@@ -38,7 +44,6 @@ curl https://raw.githubusercontent.com/open-contracting/standard_profile_templat
 
 Periodically compare the configurable files to the template's files:
 
-* <https://github.com/open-contracting/standard_profile_template/blob/master/.travis.yml>
 * <https://github.com/open-contracting/standard_profile_template/blob/master/docs/conf.py>
 * <https://github.com/open-contracting/standard_profile_template/blob/master/include/config.mk>
 
