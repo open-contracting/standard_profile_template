@@ -8,10 +8,11 @@
 1. Update and prepare any files
 1. Commit the files you added or changed
 1. Delete `.keep` files once new files are added to those directories (see below)
+1. In `.travis.yml`, set `LANGS` to a comma-separated list of the languages in which the content is available
 1. Push to a new public Git repository
 
 ```shell
-git rm docs/_static/.keep locale/.keep
+git rm locale/.keep
 git commit -am "Remove dummy files"
 ```
 
