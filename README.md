@@ -10,6 +10,7 @@
 1. Delete `.keep` files once new files are added to those directories (see below)
 1. In `.travis.yml`, set `LANGS` to a comma-separated list of the languages in which the content is available
 1. Push to a new public Git repository
+1. [Configure robots.txt to allow access to the profile's documentation](https://ocdsdeploy.readthedocs.io/en/latest/how-to/docs.html#add-a-new-profile)
 1. [Configure Travis to push builds to the staging server](https://ocdsdeploy.readthedocs.io/en/latest/how-to/docs.html#publish-draft-documentation)
 
 ```shell
