@@ -41,14 +41,14 @@ Periodically update the following files across profiles:
 
 ```shell
 curl -O https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/.gitignore
-curl -O https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/.travis.yml
-curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/schema/build-profile.py -o schema/build-profile.py
 ```
 
 Periodically compare the configurable files to the template's files:
 
+* <https://github.com/open-contracting/standard_profile_template/blob/master/.travis.yml>
 * <https://github.com/open-contracting/standard_profile_template/blob/master/docs/conf.py>
 * <https://github.com/open-contracting/standard_profile_template/blob/master/include/config.mk>
+* <https://github.com/open-contracting/standard_profile_template/blob/master/schema/build-profile.py>
 
 ## Notes
 
