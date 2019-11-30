@@ -51,7 +51,7 @@ def test_language_switcher(browser, server):
 @pytest.mark.parametrize('lang,link_text', test_navigation_params)
 def test_broken_links(browser, server, lang, link_text):
     referrer = ''
-    hrefs = set()
+    status_codes = {}
     browser.get('{}{}'.format(server, lang))
     failures = []
     while True:
@@ -62,14 +62,12 @@ def test_broken_links(browser, server, lang, link_text):
             if '/review/' in href or 'localhost' not in href:
                 continue
             # If the URL, without an anchor, has already been visited, don't test it again.
-            if href in hrefs:
-                continue
-            # Keep track of which pages have been tested.
-            hrefs.add(href)
+            if href not in status_codes:
+                status_codes[href] = requests.get(href).status_code
 
-            response = requests.get(href)
-            if response.status_code != 200:
-                failures.append([response.status_code, href, referrer])
+            status_code = status_codes[href]
+            if status_code != 200:
+                failures.append([status_code, href, referrer])
         try:
             # Scroll the link into view, to make it clickable.
             link = browser.find_element_by_link_text(link_text)
