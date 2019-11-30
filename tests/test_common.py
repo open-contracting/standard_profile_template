@@ -8,7 +8,7 @@ import requests
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import Select
 
-from tests import languages, test_basic_params, test_navigation_params, test_search_params
+from tests import languages, last_path, test_basic_params, test_navigation_params, test_search_params
 
 cwd = os.getcwd()
 
@@ -77,6 +77,7 @@ def test_broken_links(browser, server, lang, link_text):
             browser.execute_script("arguments[0].scrollIntoView();", link)
             link.click()
         except NoSuchElementException:
+            assert browser.current_url.endswith(last_path)
             break
 
     for status_code, href, referrer in failures:
