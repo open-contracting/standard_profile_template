@@ -64,7 +64,7 @@ html_theme_path = [standard_theme.get_html_theme_path()]
 html_static_path = ['_static']
 
 
-# -- Local configuration --------------------------------------------------
+# -- Local configuration -----------------------------------------------------
 
 profile_identifier = 'TODO'
 repository_url = 'https://github.com/open-contracting-extensions/TODO'
