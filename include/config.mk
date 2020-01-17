@@ -25,7 +25,7 @@ DOMAIN_PREFIX=
 # The Transifex project name.
 TRANSIFEX_PROJECT=
 # Any additional extract targets.
-EXTRACT_TARGETS=extract_notes
+EXTRACT_TARGETS=
 
 # Compile PO files for codelists and schema to MO files, so that `translate` succeeds.
 .PHONY: compile
