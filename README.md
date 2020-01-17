@@ -14,7 +14,7 @@
 1. [Configure Travis to push builds to the staging server](https://ocdsdeploy.readthedocs.io/en/latest/how-to/docs.html#publish-draft-documentation)
 
 ```shell
-git rm locale/.keep
+git rm docs/locale/.keep
 git commit -am "Remove dummy files"
 ```
 
