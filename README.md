@@ -1,22 +1,14 @@
-# OCDS for TODO
+# OCDS Profile Template
 
 ## Getting started
 
-1. [Download a ZIP file version of the template](https://github.com/open-contracting/standard_profile_template/archive/master.zip)
-1. Extract it, and initialise it as a git repository (`git init`)
-1. Replace `TODO` in `.travis.yml`, `docs/conf.py`, `docs/index.md`, `schema/profile/extension.json` and this file
-1. Update and prepare any files
-1. Commit the files you added or changed
-1. Delete `.keep` files once new files are added to those directories (see below)
-1. In `.travis.yml`, set `LANGS` to a comma-separated list of the languages in which the content is available
-1. Push to a new public Git repository
-1. [Configure robots.txt to allow access to the profile's documentation](https://ocdsdeploy.readthedocs.io/en/latest/how-to/docs.html#add-a-new-profile)
-1. [Configure Travis to push builds to the staging server](https://ocdsdeploy.readthedocs.io/en/latest/how-to/docs.html#publish-draft-documentation)
-
-```shell
-git rm docs/locale/.keep
-git commit -am "Remove dummy files"
-```
+1. [Create a repository](https://github.com/organizations/open-contracting/repositories/new) from this template
+1. [Configure the repository](https://ocdsdeploy.readthedocs.io/en/latest/deploy/docs.html#publish-draft-documentation)
+1. Clone the repository
+1. Replace `TODO` in `.github/workflows/ci.yml`, `docs/conf.py`, `docs/index.md`, `schema/profile/extension.json`
+1. In `.github/workflows/ci.yml`, set `LANGS` to a comma-separated list of the languages in which the content is available
+1. Commit your changes
+1. [Configure robots.txt to allow access to the profile's documentation](https://ocdsdeploy.readthedocs.io/en/latest/deploy/docs.html#add-a-new-profile)
 
 ### Updating build-related files
 
