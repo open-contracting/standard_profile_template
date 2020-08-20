@@ -17,10 +17,10 @@ class QuietHTTPRequestHandler(SimpleHTTPRequestHandler):
 @pytest.fixture(scope="module")
 def browser(request):
     if BROWSER == 'ChromeHeadless':
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--no-sandbox")
-        browser = webdriver.Chrome(chrome_options=chrome_options)
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        browser = webdriver.Chrome(options=options)
     else:
         browser = getattr(webdriver, BROWSER)()
     browser.implicitly_wait(3)
