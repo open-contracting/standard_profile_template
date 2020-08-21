@@ -19,10 +19,11 @@ imagesize==1.2.0          # via sphinx
 importlib-metadata==1.4.0  # via pluggy, pytest
 jinja2==2.10.3            # via sphinx
 json-merge-patch==0.2     # via ocdsextensionregistry
+jsonref==0.2              # via ocdsextensionregistry
 markupsafe==1.1.1         # via jinja2
 more-itertools==8.1.0     # via pytest, zipp
 ocds-babel==0.2.1
-ocdsextensionregistry==0.0.16
+ocdsextensionregistry==0.0.23
 packaging==20.0           # via pytest, sphinx
 pluggy==0.13.1            # via pytest
 py==1.8.1                 # via pytest
