@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 curl -sS https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/docs/conf.py | diff -u - docs/conf.py
 
 for f in .github/workflows/ci.yml include/config.mk; do
