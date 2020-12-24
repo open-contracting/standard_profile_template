@@ -45,6 +45,6 @@ jobs:
       env:
         PATH_PREFIX: profiles/TODO/
       run: |
-        if [ $GITHUB_REPOSITORY = 'open-contracting/standard_profile_template' ]; then
+        if [ $GITHUB_REPOSITORY != 'open-contracting/standard_profile_template' ]; then
           curl -sS https://raw.githubusercontent.com/open-contracting/deploy/master/deploy-docs.sh | bash -
         fi
