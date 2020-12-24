@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# No -e, because diff fails.
+set -uo pipefail
 
 curl -sS https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/docs/conf.py | diff -u - docs/conf.py
 
