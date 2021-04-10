@@ -7,7 +7,7 @@ Sphinx
 # Profile
 ocdsextensionregistry
 
-# Build
+# Translations
 sphinx-intl
 transifex-client
 
