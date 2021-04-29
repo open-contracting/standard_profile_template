@@ -18,7 +18,9 @@ from glob import glob
 from pathlib import Path
 
 import standard_theme
+from docutils.nodes import make_id
 from ocds_babel.translate import translate
+from sphinx.locale import get_translation
 
 # -- Project information -----------------------------------------------------
 
@@ -53,7 +55,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'standard_theme'
+html_theme = 'standard_theme'  # 'pydata_sphinx_theme'
 html_theme_path = [standard_theme.get_html_theme_path()]
 html_favicon = '_static/favicon-16x16.ico'
 
@@ -65,9 +67,47 @@ html_static_path = ['_static']
 
 # -- Local configuration -----------------------------------------------------
 
+_ = get_translation('notes')
+
 profile_identifier = 'TODO'
 repository_url = 'https://github.com/open-contracting-extensions/TODO'
 
+# Internationalization.
+gettext_compact = False
+gettext_domain_prefix = '{}-'.format(profile_identifier)  # `DOMAIN_PREFIX` from `config.mk`
+locale_dirs = ['locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
+smartquotes = False
+
+# Link checker.
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
+linkcheck_anchors_ignore = [r'^gid=']  # ignore Google Sheets
+linkcheck_ignore = [
+    # Avoid GitHub.com rate limiting.
+    r'^https://github.com/open-contracting/standard/(?:issues|pull)/\d+$',
+    # Ignore irreproducible false positives.
+    r'^https://www.fcny.org/fcny/$',
+    r'^http://www.eprocurementtoolkit.org/sites/default/files/2016-11/OCDS_Implemetation_Methodology_0.pdf#page=27$',
+    # Ignore unwanted links created by linkify.
+    r'^http://buyandsell.gc.ca$',
+    r'^http://release.id$',
+    # Ignore expected redirects.
+    r'^https://docs.google.com/spreadsheets/d/[^/]+/pub?gid=\d+&single=true&output=csv$',
+]
+
+# MyST configuration.
+# Disable dollarmath, which uses MathJax for a string like: "If Alice has $100 and Bob has $1..."
+# https://myst-parser.readthedocs.io/en/latest/using/intro.html#sphinx-configuration-options
+myst_enable_extensions = ['linkify']
+myst_heading_anchors = 6
+myst_heading_slug_func = make_id
+# https://github.com/executablebooks/MyST-Parser/issues/357
+suppress_warnings = ['myst.anchor']
+
+# Theme customization.
+navigation_with_keys = False  # restore the Sphinx default
+html_context = {
+    'analytics_id': 'HTWZHRIZ',
+}
 html_theme_options = {
     'analytics_id': 'HTWZHRIZ',
     'display_version': False,
@@ -79,32 +119,16 @@ html_theme_options = {
     'repository_url': repository_url,
 }
 
-# The version of OCDS to patch.
-standard_tag = '1__1__5'
+# Imported by build-profile.py.
+standard_tag = '1__1__5'  # the version of OCDS to patch
 standard_version = '1.1'
-
-# Where the patched schemas will be deployed.
-schema_base_url = 'https://standard.open-contracting.org{}/schema/{}/'.format(
+schema_base_url = 'https://standard.open-contracting.org{}/schema/{}/'.format(  # where the schemas will be deployed
     html_theme_options['root_url'], release.replace('-', '__').replace('.', '__'))
-
-# The `LOCALE_DIR` from `config.mk`, plus the theme's locale.
-locale_dirs = ['locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
-
-gettext_compact = False
-
-# The `DOMAIN_PREFIX` from `config.mk`.
-gettext_domain_prefix = '{}-'.format(profile_identifier)
-
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/main/extension_versions.csv
 extension_versions = {
     # 'extension_id_in_registry': 'version',
 }
-
-# Disable dollarmath, which uses MathJax for a string like: "If Alice has $100 and Bob has $1..."
-# https://myst-parser.readthedocs.io/en/latest/using/intro.html#sphinx-configuration-options
-myst_enable_extensions = []
-myst_heading_anchors = 6
 
 
 def setup(app):
