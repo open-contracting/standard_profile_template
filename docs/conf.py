@@ -67,7 +67,7 @@ html_static_path = ['_static']
 
 # -- Local configuration -----------------------------------------------------
 
-_ = get_translation('notes')
+_ = get_translation('theme')
 
 profile_identifier = 'TODO'
 repository_url = 'https://github.com/open-contracting-extensions/TODO'
