@@ -76,6 +76,8 @@ repository_url = 'https://github.com/open-contracting-extensions/TODO'
 gettext_compact = False
 gettext_domain_prefix = '{}-'.format(profile_identifier)  # `DOMAIN_PREFIX` from `config.mk`
 locale_dirs = ['locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
+# We use single quotes for codes, which docutils will change to double quotes.
+# https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/docutils/utils/smartquotes.py
 smartquotes = False
 
 # MyST configuration.
@@ -84,8 +86,6 @@ smartquotes = False
 myst_enable_extensions = ['linkify']
 myst_heading_anchors = 6
 myst_heading_slug_func = make_id
-# https://github.com/executablebooks/MyST-Parser/issues/357
-suppress_warnings = ['myst.anchor']
 
 # Theme customization.
 navigation_with_keys = False  # restore the Sphinx default
