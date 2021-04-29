@@ -78,22 +78,6 @@ gettext_domain_prefix = '{}-'.format(profile_identifier)  # `DOMAIN_PREFIX` from
 locale_dirs = ['locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
 smartquotes = False
 
-# Link checker.
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
-linkcheck_anchors_ignore = [r'^gid=']  # ignore Google Sheets
-linkcheck_ignore = [
-    # Avoid GitHub.com rate limiting.
-    r'^https://github.com/open-contracting/standard/(?:issues|pull)/\d+$',
-    # Ignore irreproducible false positives.
-    r'^https://www.fcny.org/fcny/$',
-    r'^http://www.eprocurementtoolkit.org/sites/default/files/2016-11/OCDS_Implemetation_Methodology_0.pdf#page=27$',
-    # Ignore unwanted links created by linkify.
-    r'^http://buyandsell.gc.ca$',
-    r'^http://release.id$',
-    # Ignore expected redirects.
-    r'^https://docs.google.com/spreadsheets/d/[^/]+/pub?gid=\d+&single=true&output=csv$',
-]
-
 # MyST configuration.
 # Disable dollarmath, which uses MathJax for a string like: "If Alice has $100 and Bob has $1..."
 # https://myst-parser.readthedocs.io/en/latest/using/intro.html#sphinx-configuration-options
