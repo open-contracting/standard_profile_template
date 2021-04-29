@@ -74,7 +74,7 @@ repository_url = 'https://github.com/open-contracting-extensions/TODO'
 
 # Internationalization.
 gettext_compact = False
-gettext_domain_prefix = '{}-'.format(profile_identifier) # `DOMAIN_PREFIX` from `config.mk`
+gettext_domain_prefix = '{}-'.format(profile_identifier)  # `DOMAIN_PREFIX` from `config.mk`
 locale_dirs = ['locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
 smartquotes = False
 
