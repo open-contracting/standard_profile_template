@@ -28,7 +28,9 @@ jobs:
             make update extract
           fi
           make
-      - run: make linkcheck
+      - run: |
+          make linkcheck
+          rm -f output.json output.txt
       - run: pytest
       # Deploy the built documentation to the staging directory.
       - if: github.event_name == 'push'
