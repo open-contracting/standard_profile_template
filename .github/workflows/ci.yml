@@ -22,12 +22,9 @@ jobs:
       - run: pip install --src $GITHUB_WORKSPACE/../src -r requirements.txt
       # Google Chrome and ChromeDriver are already included.
       # https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners
-      - name: Make
-        run: |
-          if [ $GITHUB_REPOSITORY = 'open-contracting/standard_profile_template' ]; then
-            make update extract
-          fi
-          make
+      - if: github.repository == 'open-contracting/standard_profile_template'
+        run: make update extract
+      - run: make
       - run: |
           make linkcheck
           rm -f output.json output.txt
@@ -44,10 +41,8 @@ jobs:
           machine: standard.open-contracting.org
           login: manage
           password: ${{ secrets.ELASTICSEARCH_PASSWORD }}
-      - if: github.event_name == 'push' && success()
+      - if: github.event_name == 'push' && success() && github.repository != 'open-contracting/standard_profile_template'
         env:
           PATH_PREFIX: profiles/TODO/
-        run: |
-          if [ $GITHUB_REPOSITORY != 'open-contracting/standard_profile_template' ]; then
-            curl -sS https://raw.githubusercontent.com/open-contracting/deploy/main/deploy-docs.sh | bash -
-          fi
+          PRODUCTION: ${{ github.ref == 'refs/heads/latest' }}
+        run: curl -sS https://raw.githubusercontent.com/open-contracting/deploy/main/deploy-docs.sh | bash -
