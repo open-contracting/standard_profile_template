@@ -74,7 +74,8 @@ repository_url = 'https://github.com/open-contracting-extensions/TODO'
 
 # Internationalization.
 gettext_compact = False
-gettext_domain_prefix = '{}-'.format(profile_identifier)  # `DOMAIN_PREFIX` from `config.mk`
+# `DOMAIN_PREFIX` from `config.mk`.
+gettext_domain_prefix = f'{profile_identifier}-' if profile_identifier else ''
 locale_dirs = ['locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
 # We use single quotes for codes, which docutils will change to double quotes.
 # https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/docutils/utils/smartquotes.py
@@ -95,11 +96,11 @@ html_context = {
 html_theme_options = {
     'analytics_id': 'HTWZHRIZ',
     'display_version': False,
-    'root_url': '/profiles/{}'.format(profile_identifier),
+    'root_url': f'/profiles/{profile_identifier}',
     'short_project': project.replace('Open Contracting Data Standard', 'OCDS'),
     'copyright': copyright,
     'license_name': 'Apache License 2.0',
-    'license_url': '{}/blob/HEAD/LICENSE'.format(repository_url),
+    'license_url': f'{repository_url}/blob/HEAD/LICENSE',
     'repository_url': repository_url,
 }
 
@@ -117,16 +118,16 @@ extension_versions = {
 def setup(app):
     # The root of the repository.
     basedir = Path(__file__).resolve().parents[1]
-    # The `LOCALE_DIR` from `config.mk`.
+    # `LOCALE_DIR` from `config.mk`.
     localedir = basedir / 'docs' / 'locale'
 
     language = app.config.overrides.get('language', 'en')
 
     headers = ['Title', 'Description', 'Extension']
     # The gettext domain for schema translations. Should match the domain in the `pybabel compile` command.
-    schema_domain = '{}schema'.format(gettext_domain_prefix)
+    schema_domain = f'{gettext_domain_prefix}schema'
     # The gettext domain for codelist translations. Should match the domain in the `pybabel compile` command.
-    codelists_domain = '{}codelists'.format(gettext_domain_prefix)
+    codelists_domain = f'{gettext_domain_prefix}codelists'
 
     patched_dir = basedir / 'schema' / 'patched'
     profile_dir = basedir / 'schema' / 'profile'
