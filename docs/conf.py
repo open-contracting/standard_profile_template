@@ -96,7 +96,7 @@ html_context = {
 html_theme_options = {
     'analytics_id': 'HTWZHRIZ',
     'display_version': False,
-    'root_url': f'/profiles/{profile_identifier}',
+    'root_url': f'/profiles/{profile_identifier}' if profile_identifier else '',
     'short_project': project.replace('Open Contracting Data Standard', 'OCDS'),
     'copyright': copyright,
     'license_name': 'Apache License 2.0',
