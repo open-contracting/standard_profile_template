@@ -108,7 +108,7 @@ html_theme_options = {
 standard_tag = '1__1__5'  # the version of OCDS to patch
 standard_version = '1.1'
 managed_codelist = False
-# List the extension identifiers and versions that should be part of this profile. The extensions must be available in
+# List the extension identifiers and versions that should be part of this specification. The extensions must be in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/main/extension_versions.csv
 extension_versions = {
     # 'extension_id_in_registry': 'version',
