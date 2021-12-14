@@ -82,7 +82,7 @@ packaging==20.9
     #   sphinx
 pep517==0.10.0
     # via pip-tools
-pip-tools==6.0.1
+pip-tools==6.4.0
     # via -r common-requirements.in
 pluggy==0.13.1
     # via pytest
@@ -158,6 +158,8 @@ urllib3==1.26.5
     #   requests
     #   selenium
     #   transifex-client
+wheel==0.37.0
+    # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
