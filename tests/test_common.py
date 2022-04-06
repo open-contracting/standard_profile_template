@@ -1,4 +1,3 @@
-import os
 import re
 import time
 import warnings
@@ -7,15 +6,6 @@ import pytest
 from selenium.webdriver.support.ui import Select
 
 from tests import languages, test_basic_params, test_search_params
-
-cwd = os.getcwd()
-
-
-def custom_warning_formatter(message, category, filename, lineno, line=None):
-    return str(message).replace(cwd + os.sep, '')
-
-
-warnings.formatwarning = custom_warning_formatter
 
 
 @pytest.mark.parametrize('lang,text', test_basic_params.items())
