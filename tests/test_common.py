@@ -1,6 +1,5 @@
 import re
 import time
-import warnings
 
 import pytest
 from selenium.webdriver.common.by import By
