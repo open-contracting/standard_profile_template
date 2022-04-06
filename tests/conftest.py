@@ -1,4 +1,3 @@
-import os
 import threading
 from functools import partial
 from http.server import HTTPServer, SimpleHTTPRequestHandler
