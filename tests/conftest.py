@@ -15,9 +15,10 @@ def browser(request):
 
     browser = webdriver.Chrome(options=options)
     browser.implicitly_wait(3)
-    request.addfinalizer(lambda: browser.quit())
 
-    return browser
+    yield browser
+
+    browser.quit()
 
 
 @pytest.fixture(scope='module')
@@ -30,9 +31,7 @@ def server(request):
     thread = threading.Thread(target=server.serve_forever)
     thread.start()
 
-    def stop():
-        server.shutdown()
-        thread.join()
-    request.addfinalizer(stop)
+    yield f'http://{host}:{port_number}/'
 
-    return f'http://{host}:{port_number}/'
+    server.shutdown()
+    thread.join()

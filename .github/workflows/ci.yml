@@ -18,6 +18,7 @@ jobs:
       - run: pip install --src $GITHUB_WORKSPACE/../src -r requirements.txt
       # Google Chrome and ChromeDriver are already included.
       # https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners
+      # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md
       - if: github.repository == 'open-contracting/standard_profile_template'
         run: make update extract
       - run: make
