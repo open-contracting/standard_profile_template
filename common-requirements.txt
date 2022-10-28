@@ -70,7 +70,7 @@ jinja2==2.11.3
     #   sphinx
 json-merge-patch==0.2
     # via ocdsextensionregistry
-jsonref==0.2
+jsonref==1.0.0.post1
     # via ocdsextensionregistry
 linkify-it-py==1.0.1
     # via -r common-requirements.in
