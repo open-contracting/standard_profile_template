@@ -106,7 +106,7 @@ pip-tools==6.6.0
     # via -r common-requirements.in
 pluggy==0.13.1
     # via pytest
-py==1.10.0
+py==1.11.0
     # via pytest
 pycparser==2.21
     # via cffi
