@@ -82,7 +82,6 @@ locale_dirs = ['locale/', os.path.join(standard_theme.get_html_theme_path(), 'lo
 smartquotes = False
 
 # MyST configuration.
-# https://myst-parser.readthedocs.io/en/latest/using/intro.html#sphinx-configuration-options
 myst_enable_extensions = ['linkify']
 myst_heading_anchors = 6
 myst_heading_slug_func = make_id
