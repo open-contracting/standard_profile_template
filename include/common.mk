@@ -119,6 +119,9 @@ all: build_source compile $(TRANSLATIONS:.%=build.%) clean_current_lang
 
 ### Development
 
+$(TRANSLATIONS:.%=autobuild.%): autobuild.%: current_lang.%
+	sphinx-autobuild $(SPHINX_AUTOBUILD_EXTRA_ARGS) -nW -q -b dirhtml $(DOCS_DIR) $(BUILD_DIR)/$*
+
 .PHONY: autobuild
 autobuild: current_lang.en
 	sphinx-autobuild $(SPHINX_AUTOBUILD_EXTRA_ARGS) -nW -q -b dirhtml $(DOCS_DIR) $(BUILD_DIR)/en
