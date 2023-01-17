@@ -6,7 +6,7 @@
 1. [Configure the repository](https://ocdsdeploy.readthedocs.io/en/latest/deploy/docs.html#publish-draft-documentation)
 1. Clone the repository
 1. Replace `TODO` in `.github/workflows/ci.yml`, `docs/conf.py`, `docs/index.md`, `schema/profile/extension.json`
-1. In `.github/workflows/ci.yml`, set `LANGS` to a comma-separated list of the languages in which the content is available
+1. Replace the content of the readme with `Read this profile at <https://standard.open-contracting.org/profiles/TODO/latest/en/>`
 1. Commit your changes
 1. [Configure robots.txt to allow access to the profile's documentation](https://ocdsdeploy.readthedocs.io/en/latest/deploy/docs.html#add-a-new-profile)
 
