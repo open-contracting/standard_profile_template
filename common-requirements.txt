@@ -28,6 +28,8 @@ certifi==2024.7.4
     #   elastic-transport
     #   requests
     #   selenium
+cfgv==3.4.0
+    # via pre-commit
 charset-normalizer==3.1.0
     # via requests
 click==8.1.3
@@ -38,6 +40,8 @@ click==8.1.3
     #   uvicorn
 colorama==0.4.6
     # via sphinx-autobuild
+distlib==0.3.8
+    # via virtualenv
 docutils==0.18
     # via
     #   myst-parser
@@ -51,10 +55,14 @@ exceptiongroup==1.2.2
     #   anyio
     #   cattrs
     #   pytest
+filelock==3.15.4
+    # via virtualenv
 h11==0.13.0
     # via
     #   uvicorn
     #   wsproto
+identify==2.6.0
+    # via pre-commit
 idna==3.7
     # via
     #   anyio
@@ -88,6 +96,8 @@ mdurl==0.1.2
     # via markdown-it-py
 myst-parser==0.18.1
     # via -r common-requirements.in
+nodeenv==1.9.1
+    # via pre-commit
 ocds-babel==0.3.1
     # via -r common-requirements.in
 ocdsextensionregistry==0.3.8
@@ -101,9 +111,13 @@ packaging==21.3
     #   pytest
     #   sphinx
 platformdirs==3.9.1
-    # via requests-cache
+    # via
+    #   requests-cache
+    #   virtualenv
 pluggy==0.13.1
     # via pytest
+pre-commit==3.8.0
+    # via -r common-requirements.in
 pygments==2.15.1
     # via sphinx
 pyparsing==2.4.7
@@ -115,7 +129,9 @@ pytest==7.2.0
 pytz==2021.1
     # via babel
 pyyaml==6.0.1
-    # via myst-parser
+    # via
+    #   myst-parser
+    #   pre-commit
 requests==2.32.2
     # via
     #   elasticsearch
@@ -190,6 +206,8 @@ urllib3==1.26.19
     #   selenium
 uvicorn==0.30.6
     # via sphinx-autobuild
+virtualenv==20.26.3
+    # via pre-commit
 watchfiles==0.24.0
     # via sphinx-autobuild
 websockets==13.0.1
