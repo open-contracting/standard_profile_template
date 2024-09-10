@@ -19,5 +19,4 @@ selenium
 
 # Development
 click
-pre-commit
 sphinx-autobuild
