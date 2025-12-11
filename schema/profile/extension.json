@@ -6,7 +6,7 @@
     "en": "Collects, into a single extension, the extensions that compose the OCDS for TODO profile."
   },
   "documentationUrl": {
-    "en": "http://httpbin.org/anything/path/to/documentation/in/specified/language"
+    "en": "http://localhost:8080/anything/path/to/documentation/in/specified/language"
   },
   "compatibility": [
     "1.1"
