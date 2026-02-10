@@ -14,7 +14,7 @@ attrs==25.4.0
     #   outcome
     #   requests-cache
     #   trio
-babel==2.9.1
+babel==2.18.0
     # via
     #   sphinx
     #   sphinx-intl
@@ -111,8 +111,6 @@ pysocks==1.7.1
     # via urllib3
 pytest==9.0.2
     # via -r common-requirements.in
-pytz==2021.1
-    # via babel
 pyyaml==6.0.1
     # via myst-parser
 requests==2.32.4
