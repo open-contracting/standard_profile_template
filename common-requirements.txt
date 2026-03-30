@@ -103,7 +103,7 @@ platformdirs==3.9.1
     # via requests-cache
 pluggy==1.6.0
     # via pytest
-pygments==2.15.1
+pygments==2.20.0
     # via
     #   pytest
     #   sphinx
