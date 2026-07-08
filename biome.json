@@ -6,7 +6,7 @@
     "defaultBranch": "main"
   },
   "files": {
-    "includes": ["**", "!schema"]
+    "includes": ["**", "!docs/_static/docson", "!docs/_templates", "!schema"]
   },
   "assist": {
     "actions": {
@@ -17,7 +17,7 @@
   },
   "formatter": {
     "indentStyle": "space",
-    "indentWidth": 4,
+    "indentWidth": 2,
     "lineWidth": 119
   },
   "json": {
