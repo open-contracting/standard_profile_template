@@ -6,7 +6,7 @@
     "defaultBranch": "main"
   },
   "files": {
-    "includes": ["**", "!docs/_static/docson", "!docs/_templates", "!schema"]
+    "includes": ["**", "!docs/_static/docson", "!docs/_templates", "!docs/examples", "!schema"]
   },
   "assist": {
     "actions": {
