@@ -11,6 +11,6 @@
     "includes": ["**", "!docs/examples/**/*.json", "!schema/**/*.json"]
   },
   "files": {
-    "includes": ["**", "!docs/_static/docson", "!docs/_templates"]
+    "includes": ["**", "!docs/_static/docson", "!docs/_templates", "!docs/_static/*.min.js"]
   }
 }
