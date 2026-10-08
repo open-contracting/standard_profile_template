@@ -8,7 +8,6 @@ import os
 from glob import glob
 from pathlib import Path
 
-import standard_theme
 from docutils.nodes import make_id
 from ocds_babel.translate import translate
 from sphinx.locale import get_translation
@@ -39,8 +38,6 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**/docson/[!p]**", "**/
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "standard_theme"  # 'pydata_sphinx_theme'
-html_theme_path = [standard_theme.get_html_theme_path()]
-html_favicon = "_static/favicon-16x16.ico"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 
@@ -56,7 +53,7 @@ repository_url = "https://github.com/open-contracting-extensions/TODO"
 gettext_compact = False
 # `DOMAIN_PREFIX` from `config.mk`.
 gettext_domain_prefix = f"{profile_identifier}-" if profile_identifier else ""
-locale_dirs = ["locale/", os.path.join(standard_theme.get_html_theme_path(), "locale")]
+locale_dirs = ["locale/"]
 # We use single quotes for codes, which docutils will change to double quotes.
 # https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/docutils/utils/smartquotes.py
 smartquotes = False
@@ -72,16 +69,9 @@ html_context = {
     "analytics_id": "HTWZHRIZ",
 }
 html_theme_options = {
-    "analytics_id": "HTWZHRIZ",
-    "display_version": False,
     "root_url": f"/profiles/{profile_identifier}" if profile_identifier else "",
-    # Relative to the version's directory, so that one value serves the live and staging copies.
-    "versions_url": "../versions.json",
     "languages": {"en": "English"},
     "short_project": project.replace("Open Contracting Data Standard", "OCDS"),
-    "copyright": copyright,
-    "license_name": "Apache License 2.0",
-    "license_url": f"{repository_url}/blob/HEAD/LICENSE",
     "repository_url": repository_url,
 }
 html_short_title = f"{html_theme_options['short_project']} v{release}"
