@@ -3,6 +3,7 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import json
 import os
 from glob import glob
 from pathlib import Path
@@ -27,10 +28,12 @@ release = "1.0.0-rc.1"
 
 extensions = [
     "myst_parser",
+    "sphinxcontrib.jsonschema",
+    "sphinxcontrib.opendataservices",
 ]
 
 templates_path = ["_templates"]
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**/docson/[!p]**", "**/docson/package*.json"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -72,6 +75,9 @@ html_theme_options = {
     "analytics_id": "HTWZHRIZ",
     "display_version": False,
     "root_url": f"/profiles/{profile_identifier}" if profile_identifier else "",
+    # Relative to the version's directory, so that one value serves the live and staging copies.
+    "versions_url": "../versions.json",
+    "languages": {"en": "English"},
     "short_project": project.replace("Open Contracting Data Standard", "OCDS"),
     "copyright": copyright,
     "license_name": "Apache License 2.0",
@@ -86,9 +92,8 @@ standard_version = "1.1"
 managed_codelist = False
 # List the extension identifiers and versions that should be part of this specification. The extensions must be in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/main/extension_versions.csv
-extension_versions = {
-    # e.g. 'extension_id_in_registry': 'version',
-}
+with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "extension_versions.json")) as f:
+    extension_versions = json.load(f)
 
 
 def setup(app):
