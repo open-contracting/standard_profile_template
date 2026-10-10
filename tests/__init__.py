@@ -7,5 +7,5 @@ test_basic_params = {
 }
 
 test_search_params = [
-    ("en", r"found \d+ page\(s\) matching"),
+    ("en", r"found \d+ pages matching"),
 ]
