@@ -22,7 +22,7 @@ babel==2.18.0
     #   sphinx-intl
 cattrs==23.1.2
     # via requests-cache
-certifi==2026.1.4
+certifi==2026.10.19
     # via
     #   elastic-transport
     #   requests
@@ -45,7 +45,7 @@ docutils==0.22.4
     #   sphinxcontrib-opendataservices-jsonschema
 elastic-transport==9.2.1
     # via elasticsearch
-elasticsearch==9.3.0
+elasticsearch[requests]==9.3.0
     # via ocdsindex
 h11==0.16.0
     # via
@@ -209,12 +209,15 @@ types-urllib3==1.26.25.14
     # via selenium
 typing-extensions==4.15.0
     # via
+    #   anyio
     #   elasticsearch
+    #   referencing
     #   selenium
+    #   starlette
     #   trio-typing
 url-normalize==1.4.3
     # via requests-cache
-urllib3==2.8.0
+urllib3[socks]==2.8.0
     # via
     #   elastic-transport
     #   requests
