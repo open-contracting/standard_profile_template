@@ -4,11 +4,11 @@
 set -u
 
 for f in biome.json .github/workflows/ci.yml .github/workflows/lint.yml .github/workflows/spellcheck.yml docs/conf.py include/config.mk; do
-    curl -sS https://raw.githubusercontent.com/open-contracting/standard_profile_template/refs/heads/latest/$f | diff -u - $f
+    curl -sSf https://raw.githubusercontent.com/open-contracting/standard_profile_template/refs/heads/latest/$f | diff -u - $f
 done
 
 if [ -d util ] || [ -d schema/project-level ]; then
-    curl -sS https://raw.githubusercontent.com/open-contracting/standard_profile_template/refs/heads/latest/.gitignore | diff -u - .gitignore
+    curl -sSf https://raw.githubusercontent.com/open-contracting/standard_profile_template/refs/heads/latest/.gitignore | diff -u - .gitignore
 else
-    curl -sS https://raw.githubusercontent.com/open-contracting/standard_profile_template/refs/heads/latest/manage.py | diff -u - manage.py
+    curl -sSf https://raw.githubusercontent.com/open-contracting/standard_profile_template/refs/heads/latest/manage.py | diff -u - manage.py
 fi
